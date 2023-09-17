@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js">
+
+    </script>
+</head>
+
+<body>
+    <input type="text" id="tf" value="" maxlength="10" > <br>
+    <p id="charCount">Character remaining -- 10</p>
+    <script>
+        $(document).ready(function () {
+            $('#tf').on('input', function () {
+                var maxLength = $(this).attr('maxlength');
+                var currentLength = $(this).val().length;
+                var remainingChars = maxLength - currentLength;
+
+                // Update the character count display
+                $('#charCount').text('Character remaining-- ' + remainingChars);
+                if(remainingChars == 0)
+                {
+                    $('#charCount').text('');
+                }
+                
+                if ($("#tf").val() == "") {
+                   
+                    $('#charCount').text('');
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

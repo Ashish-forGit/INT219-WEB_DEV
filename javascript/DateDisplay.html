@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Date and Time Display</title>
+</head>
+<style>
+   
+</style>
+
+<body>
+
+    <button id="displayButton" onclick="show()">Click me to display Date and Time</button>
+    <p id="datetime"></p>
+    <button type="button" onclick="stop()">Stop</button>
+
+    <script>
+        var p;
+        function show(){
+            
+          p =  setInterval(()=>{
+            document.getElementById("datetime").innerHTML=Date();
+        },1000)
+    }
+
+        function stop(){
+      clearInterval(p);
+            }
+        
+    </script>
+
+</body>
+
+</html>

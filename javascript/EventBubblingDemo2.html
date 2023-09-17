@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Rotating Boxes</title>
+    <style>
+        .box {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            transition: transform 2s ease; /* Add a transition for smooth rotation */
+            margin: 200px;
+            
+        }
+
+        .blue-box {
+            background-color: blue;
+            width: 300px;
+            height: 300px;
+        }
+
+        .green-box {
+            background-color: green;
+            width: 200px;
+            height: 200px;
+        }
+
+        .red-box {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box blue-box">
+        <div class="box green-box">
+            <div class="box red-box" id="innermost-box">
+                Mouseover to Rotate
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const innermostBox = document.getElementById('innermost-box');
+        const boxes = document.querySelectorAll('.box');
+
+        innermostBox.addEventListener('mouseover', () => {
+            // Rotate all boxes by 360 degrees
+            boxes.forEach(box => {
+                box.style.transform = 'rotate(360deg)';
+            });
+            
+        });
+        
+
+        // Reset rotation on mouseout
+        innermostBox.addEventListener('mouseout', () => {
+            boxes.forEach(box => {
+                box.style.transform = 'rotate(0deg)';
+            });
+        });
+    </script>
+</body>
+</html>

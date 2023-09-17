@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onchange input</title>
+</head>
+<body>
+    Enter your Name: <input type="text" id="fname", onchange="hai()">
+    <script>
+        function hai() {
+            var x= document.getElementById("fname");
+            x.style.backgroundColor = "pink";
+            x.value = x.value.toUpperCase();
+            x.style.borderRadius= "3px";
+             
+        }
+
+    </script>
+</body>
+</html>

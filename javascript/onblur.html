@@ -1,0 +1,36 @@
+<html>
+
+<script>
+    function hai() {
+        var x = document.getElementById("box");
+        x.style.backgroundColor = "red";
+        if (document.getElementById("box").value = "") {
+            document.getElementById("box").style.background = "black"; 
+        }
+
+    }
+    function hai1() {
+        var y = document.getElementById("box");
+        y.style.backgroundColor = "pink";
+
+    }
+
+    function hai2() {
+        var x = document.getElementById("box2");
+        x.style.backgroundColor = "red";
+    }
+
+    function hai3() {
+        var z = document.getElementById("box2");
+        z.style.backgroundColor = "pink";
+
+    }
+
+</script>
+
+<body>
+    <input type="text" id="box" onblur="hai()" onkeypress="hai1()">
+    <input type="text" id="box2" onblur="hai2()" onkeypress="hai3()">
+</body>
+
+</html>

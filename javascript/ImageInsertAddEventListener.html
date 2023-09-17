@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #enlargableImage {
+            width: 300px;
+            height: 300px;
+            transition: all 0.3s ease;
+            margin-top: 150px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <img id="enlargableImage" src="https://conferences.lpu.in/isswm/imgs/4.jpg" alt="Enlargable Image">
+    </center>
+    <script>
+        const imageElement = document.getElementById('enlargableImage');
+
+        // Enlarge the image on mouseover
+        imageElement.addEventListener('mouseover', () => {
+            imageElement.style.width = '400px';
+            imageElement.style.height = '400px';
+        });
+
+        // Reduce the image size on mouseout
+        imageElement.addEventListener('mouseout', () => {
+            imageElement.style.width = '300px';
+            imageElement.style.height = '300px';
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        * {
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bg-img {
+            /* The image used */
+            background-image: url("https://conferences.lpu.in/isswm/imgs/4.jpg");
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Add styles to the form container */
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 50px;
+            box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+            border-radius: 10px;
+            opacity: 90%;
+        }
+
+        /* Full-width input fields */
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit button */
+        .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 15%;
+            opacity: 0.9;
+            border-radius: 20%;
+        }
+
+        .btn:hover {
+            opacity: 1;
+        }
+
+        #city {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-img">
+        <form action="" class="container" name="myform" onsubmit="return(validation());">
+            <center>
+                <h1>Dont have an account?! Want to <br>join us?!</h1>
+            </center>
+            <label for="Name"><b>Name</label>
+            <input type="text" placeholder="Enter Name" name="name">
+            <span id="errorname" class="error"></span> <br>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email">
+            <span id="erroremail" class="error"></span>
+            <br>
+            <label for="Select city"><b>Select city</b></label> <br>
+            <select name="City" id="city">
+                <option value="Phagwara">Phagwara</option>
+                <option value="Patna">Patna</option>
+                <option value="Delhi">Delhi</option>
+
+            </select>
+            <span id="errorcity" class="error"></span>
+
+            <br>
+            <label for="Gender"><b>Gender :</label>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">Male</label>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">Female</label>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">Others</label>
+            <span id="errorgender" class="error"></span>
+            <br> <br>
+
+            <label for="password"><b>Enter Password</b></label> <br>
+            <input type="password" placeholder="password" name="pwd">
+            <span id="errorpassword" class="error"></span>
+            <br>
+            <input type="checkbox" <p>I agree to the terms and condition</p>
+            <span id="errorcheck" class="error"></span>
+            <br>
+
+
+
+
+            <input type="submit" value="Submit" class="btn">
+            <input type="reset" value="Reset" class="btn">
+        </form>
+    </div>
+<script>
+    function validation() {
+        var isValid = true;
+        if (document.myform.name.value == "") {
+            document.getElementById("errorname").innerHTML = "Name can not be left blank";
+            isValid = false;
+        }
+        else {
+            document.getElementById("errorname") = "";
+
+        }
+
+        if (document.myform.email.value == "") {
+            document.getElementById("erroremail").innerHTML = "Email can not be left blank";
+            isValid = false;
+        }
+        else {
+            document.getElementById("erroremail") = "";
+
+        }
+
+        
+        return isValid;
+        
+    }
+
+
+
+</script>
+</body>
+
+</html>

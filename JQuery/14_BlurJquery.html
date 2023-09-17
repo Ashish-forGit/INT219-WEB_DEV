@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textbox Color Change</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .green {
+            background-color: pink;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        /* Style for the yellow background */
+        .yellow-background {
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input type="text" id="textbox1">
+    <input type="text" id="textbox2">
+
+    <script>
+        $(document).ready(function () {
+
+            function handleTextboxChange() {
+                var textbox1Value = $('#textbox1').val();
+                var textbox2Value = $('#textbox2').val();
+
+
+                if (textbox1Value === '' && textbox2Value === '') {
+                    $('#textbox1, #textbox2').addClass('red').removeClass('green');
+                } else {
+                    $('#textbox1, #textbox2').addClass('green').removeClass('red');
+                }
+            }
+
+
+            $('#textbox1, #textbox2').on('input', handleTextboxChange);
+
+            $("#textbox1, #textbox2").focusout(function () {
+
+                $(":input").addClass("yellow-background");
+
+            });
+        });
+    </script>
+</body>
+
+</html>

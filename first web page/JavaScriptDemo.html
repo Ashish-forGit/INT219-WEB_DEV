@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <input type="button" value="Add" onclick="add()">
+    <input type="button" value="Mul" onclick="add()">
+    <input type="button" value="Div" onclick="add()">
+    <input type="button" value="SUB" onclick="add()">
+    
+    <script>
+        function add() {
+            var numOne, numTwo, sum , mul, div, diff;
+            numOne = parseInt(document.getElementById("num1").value);
+            numTwo = parseInt(document.getElementById("num2").value);
+            sum = numOne + numTwo;
+            mul = numOne * numTwo;
+            div = numOne / numTwo;
+            diff = numOne - numTwo;
+            document.write("The sum is : " + sum+"<br>");
+            
+            document.write("The mul is : " + mul+"<br>");
+            document.write("The div is : " + div+ "<br>");
+            document.write("The diff is : " + diff+"<br>");
+
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Button</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            background: rgb(126, 136, 125);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            border: 20px ridge rgb(97, 246, 233);
+            border-radius: 25px;
+            background-image: linear-gradient(to bottom right, green, rgb(145, 215, 58), rgb(255, 252, 90));
+            transform: rotate(360 deg);
+        }
+
+        .box:hover {
+            animation: rotate 2s linear;
+            scale: 2;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+                scale: 1;
+            }
+
+            100% {
+                transform: rotate(360deg);
+                scale: 2;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+       <!-- / <button type="button"></button> -->
+    </div>
+</body>
+
+</html>

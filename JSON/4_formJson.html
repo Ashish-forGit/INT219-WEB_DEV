@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Railway Reservation Form</title>
+</head>
+<body>
+    <h1>Railway Reservation Form</h1>
+    <form id="reservationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="train">Train Name:</label>
+        <input type="text" id="train" name="train" required><br><br>
+
+        <label for="from">From Station:</label>
+        <input type="text" id="from" name="from" required><br><br>
+
+        <label for="to">To Station:</label>
+        <input type="text" id="to" name="to" required><br><br>
+
+        <label for="date">Date of Travel:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="class">Class:</label>
+        <select id="class" name="class" required>
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+            <option value="first-class">First Class</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Reservation Details (JSON):</h2>
+    <pre id="jsonResult"></pre>
+
+    <script>
+        document.getElementById("reservationForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const formDataObj = {};
+            
+            formData.forEach((value, key) => {
+                formDataObj[key] = value;
+            });
+            
+            const jsonResult = JSON.stringify(formDataObj, null, 2);
+            document.getElementById("jsonResult").textContent = jsonResult;
+        });
+    </script>
+</body>
+</html>

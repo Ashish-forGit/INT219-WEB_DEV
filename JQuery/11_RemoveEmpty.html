@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+   
+</head>
+<body>
+    <div style="height:50px;width:100px;background-color: pink;">
+        <p>hello</p>
+        <p>hai there</p>
+        <p>bsdk</p>
+    </div>
+    <br>
+    <button id="btn1">Click for empty</button>
+    <button id="btn2">Click for remove</button>
+    <script>
+        $("#btn1").click(function(){
+            $("div").empty();
+        })
+        $("#btn2").click(function(){
+            $("div").remove();
+        })
+    </script>
+</body>
+</html>

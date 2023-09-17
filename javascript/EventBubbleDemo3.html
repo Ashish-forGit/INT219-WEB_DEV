@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nested Divs Event Bubbling</title>
+  <style>
+    .parent {
+        margin: 50%;
+      width: 300px;
+      height: 300px;
+      background-color: lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .child1 {
+      width: 150px;
+      height: 150px;
+      background-color: blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+    .child2 {
+      width: 250px;
+      height: 250px;
+      background-color: yellow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="child2">
+      <div class="child1">
+       Hover
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const parent = document.querySelector('.parent');
+    const child1 = document.querySelector('.child1');
+    const child2 = document.querySelector('.child2');
+
+    child1.addEventListener('mouseover', function(event) {
+      if (event.target.classList.contains('child1')) {
+        // Change background color
+        event.target.style.backgroundColor = 'green';
+
+        // Rotate divs
+        child1.style.transform = 'rotate(360deg)';
+      }
+    });
+
+    child1.addEventListener('mouseout', function(event) {
+      if (event.target.classList.contains('child1')) {
+        // Reset background color
+        event.target.style.backgroundColor = 'blue';
+
+        // Reset rotation
+        child1.style.transform = 'rotate(360deg)';
+      }
+    });
+
+    child2.addEventListener('mouseover', function(event) {
+      if (event.target.classList.contains('child2')) {
+        // Change background color
+        event.target.style.backgroundColor = 'green';
+
+        // Rotate divs
+        child2.style.transform = 'rotate(360deg)';
+      }
+    });
+
+    child2.addEventListener('mouseout', function(event) {
+      if (event.target.classList.contains('child2')) {
+        // Reset background color
+        event.target.style.backgroundColor = 'blue';
+
+        // Reset rotation
+        child2.style.transform = 'rotate(360deg)';
+      }
+    });
+
+    parent.addEventListener('mouseover', function(event) {
+      if (event.target.classList.contains('parent')) {
+        // Change background color
+        event.target.style.backgroundColor = 'green';
+
+        // Rotate divs
+        parent.style.transform = 'rotate(360deg)';
+      }
+    });
+
+    parent.addEventListener('mouseout', function(event) {
+      if (event.target.classList.contains('parent')) {
+        // Reset background color
+        event.target.style.backgroundColor = 'blue';
+
+        // Reset rotation
+        parent.style.transform = 'rotate(360deg)';
+      }
+    });
+  </script>
+</body>
+</html>

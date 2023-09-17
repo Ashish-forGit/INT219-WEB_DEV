@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+<head>
+    <script>
+        function add() {
+            var numOne, numTwo, sum, sub, div, mul;
+            numOne = parseInt(document.getElementById("first").value);
+            numTwo = parseInt(document.getElementById("second").value);
+            sum = numOne + numTwo;
+            sub = numOne - numTwo;
+            div = numOne / numTwo;
+            mul = numOne * numTwo;
+            document.getElementById("answer1").value = sum;
+            document.getElementById("answer2").value = sub;
+            document.getElementById("answer3").value = div;
+            document.getElementById("answer4").value = mul;
+        }
+    </script>
+</head>
+
+<body>
+
+    <p>Enter the First Number: <input id="first"></p>
+    <p>Enter the Second Number: <input id="second"></p>
+    <button onclick="add()">Add</button>
+    <button onclick="add()">Sub</button>
+    <button onclick="add()">MUL</button>
+    <button onclick="add()">Div</button>
+    <p>Sum = <input id="answer1"></p>
+    <p>Sub = <input id="answer2"></p>
+    <p>Div = <input id="answer3"></p>
+    <p>Mul = <input id="answer4"></p>
+
+</body>
+
+</html>

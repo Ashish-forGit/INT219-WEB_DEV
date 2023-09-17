@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java script object notation</title>
+</head>
+<body>
+    <script>
+        let student = {
+            name: "Rahul",
+            address: "delhi",
+            cgpa: "7.99"
+        }
+        let stud1 = JSON.stringify(student);
+        
+        document.write("Name: "+student.name + "<br>")
+        document.write("Address: "+student.address + "<br>")
+        document.write("CGPA: "+student.cgpa + "<br>"+"<br>")
+        
+        document.write("Name: "+student["name"] + "<br>")
+        document.write("Address: "+student["address"] + "<br>")
+        document.write("CGPA: "+student["cgpa"] + "<br>"+"<br>")
+
+        document.write(stud1);
+        console.log(student)
+    </script>
+</body>
+</html>

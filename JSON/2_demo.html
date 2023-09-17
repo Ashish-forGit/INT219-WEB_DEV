@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java script object notation</title>
+</head>
+<body>
+    <script>
+        let student = {
+            name: "Rahul",
+            Address: "delhi",
+            cgpa: "7.99"
+        }
+        
+        for(let key in student){
+            document.write(key+" : "+student[key]+"<br>");
+        }
+        document.write("<br>");
+
+        let newValue = Object.values(student);
+        let newKey = Object.keys(student);
+        
+        newValue.forEach(newKey => {
+
+            document.write(newKey+" : "+student[newKey]+"<br>");
+       
+        });
+
+    </script>
+</body>
+</html>

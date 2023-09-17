@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        input:focus {
+            border: 2px solid #ff0000;
+            /* Change the border color */
+            outline: none;
+            /* Remove the default blue outline */
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <button id="b1">Set Value</button>
+    <button id="b2">Clear Value</button>
+    <script>
+        $("#b1").click(function () {
+            $("input").val("Hello");
+
+        });
+
+        $("#b2").click(function () {
+            $("input").val("");
+
+        });
+
+    </script>
+
+</body>
+
+</html>
